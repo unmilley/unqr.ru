@@ -1,0 +1,26 @@
+{
+  "name": "short-link-qr",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "dev:host": "nuxt dev --host",
+    "build": "nuxt build",
+    "preview": "nuxt preview",
+    "postinstall": "node postinstall.cjs && nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxtjs/supabase": "1.4.5",
+    "nuxt": "^3.15.0",
+    "vue": "latest",
+    "vue-router": "latest"
+  },
+  "devDependencies": {
+    "punycode": "^2.3.1"
+  },
+  "packageManager": "pnpm@9.15.1",
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}
