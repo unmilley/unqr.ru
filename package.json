@@ -1,6 +1,6 @@
 {
   "name": "short-link-qr",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -13,13 +13,17 @@
   "dependencies": {
     "@nuxtjs/supabase": "1.4.5",
     "nuxt": "^3.15.0",
-    "vue": "latest",
-    "vue-router": "latest"
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
-    "punycode": "^2.3.1"
+    "@nuxtjs/tailwindcss": "^6.12.2",
+    "@unmilley/daisyui": "^1.0.7",
+    "daisyui": "^4.12.23",
+    "punycode": "^2.3.1",
+    "tailwindcss": "^3.4.17"
   },
-  "packageManager": "pnpm@9.15.1",
+  "packageManager": "pnpm@9.15.2",
   "engines": {
     "node": ">=20.9.0"
   }
