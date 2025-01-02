@@ -16,7 +16,7 @@ function replaceInFile(filePath, searchValue, replaceValue) {
   })
 }
 function generatePath(relativePath) {
-  const baseDir = path.join(__dirname, 'node_modules/.pnpm')
+  const baseDir = path.join(__dirname, '../node_modules/.pnpm')
   const parts = relativePath.split('/')
   const fileName = parts.shift()
   const packageName = parts.join('/')

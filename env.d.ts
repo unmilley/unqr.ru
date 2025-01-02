@@ -3,6 +3,7 @@ declare namespace NodeJS {
     NODE_ENV: 'development' | 'production'
     SUPABASE_URL: string
     SUPABASE_KEY: string
+    SUPABASE_ID: string
     BASE_URL: string
   }
 }

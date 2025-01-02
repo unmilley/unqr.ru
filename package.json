@@ -8,19 +8,28 @@
     "dev:host": "nuxt dev --host",
     "build": "nuxt build",
     "preview": "nuxt preview",
-    "postinstall": "node postinstall.cjs && nuxt prepare"
+    "postinstall": "node ./scripts/postinstall.cjs && pnpm generate:supabase && nuxt prepare",
+    "generate:supabase": "node -r dotenv/config ./scripts/supabase_gen.js"
   },
   "dependencies": {
+    "@nuxtjs/seo": "2.0.2",
     "@nuxtjs/supabase": "1.4.5",
+    "@vueuse/nuxt": "12.3.0",
     "nuxt": "^3.15.0",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
+    "@iconify-json/bx": "^1.2.2",
+    "@nuxt/icon": "^1.10.3",
     "@nuxtjs/tailwindcss": "^6.12.2",
     "@unmilley/daisyui": "^1.0.7",
+    "@unmilley/tw-master-class": "^1.0.0",
+    "@vueuse/core": "^12.3.0",
     "daisyui": "^4.12.23",
+    "dotenv": "^16.4.7",
     "punycode": "^2.3.1",
+    "supabase": ">=1.8.1",
     "tailwindcss": "^3.4.17"
   },
   "packageManager": "pnpm@9.15.2",

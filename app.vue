@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto">
+  <div>
     <NuxtRouteAnnouncer>
       <template #default="{ message }">
         <p>{{ message }} was loaded.</p>
@@ -20,16 +20,6 @@
 <script lang="ts" setup></script>
 
 <style>
-.qwe {
-  border: 1px solid salmon;
-}
-.qwe2 > * {
-  border: 1px solid salmon;
-}
-.qwe3 * {
-  border: 1px solid salmon;
-}
-
 .page-enter-active,
 .page-leave-active {
   transition: all 0.4s;
