@@ -1,17 +1,18 @@
 import { defineTheme, type Variables } from '@unmilley/daisyui'
+import { masterClass } from '@unmilley/tw-master-class'
 import daisyui from 'daisyui'
 import type { Config } from 'tailwindcss'
 
 const VARIABLES: Variables = {
   roundedBox: '1rem',
-  roundedBtn: '.5rem',
+  roundedBtn: '0.5rem',
   roundedBadge: '1.9rem',
-  animationBtn: '.25s',
+  animationBtn: '0.25s',
   animationInput: '.2s',
-  btnFocusScale: ': .95',
+  btnFocusScale: '0.95',
   borderBtn: '1px',
   tabBorder: '1px',
-  tabRadius: '.5rem',
+  tabRadius: '0.5rem',
 }
 
 const light = defineTheme({
@@ -44,7 +45,10 @@ export default <Partial<Config>>{
   content: ['./components/**/*.vue', './layouts/**/*.vue', './pages/**/*.vue', './app.vue'],
   darkMode: ['class', 'data-theme'],
   theme: {},
-  plugins: [daisyui],
+  plugins: [masterClass, daisyui],
+  masterClass: {
+    name: 'qwe',
+  },
   daisyui: {
     themes: [{ dark, light }],
     logs: false,
