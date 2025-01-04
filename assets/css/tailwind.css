@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    overflow-x: hidden;
+    background-color: var(--fallback-b3, oklch(var(--b3) / 1));
+    min-height: 100dvh;
+  }
+  :root:has(:is(.modal-open, dialog.modal[open])),
+  html:has(.drawer-toggle:checked) {
+    scrollbar-gutter: auto !important;
+  }
+}
+
+@layer components {
+  .no-spinner {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+  .no-arrow::-webkit-calendar-picker-indicator {
+    @apply !hidden !opacity-0;
+  }
+
+  .no-spinner::-webkit-outer-spin-button,
+  .no-spinner::-webkit-inner-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+  }
+}
