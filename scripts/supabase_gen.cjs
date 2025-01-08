@@ -1,6 +1,7 @@
-import { execSync } from 'child_process'
-import 'dotenv/config'
-import { env, platform } from 'process'
+require('dotenv').config()
+
+const { execSync } = require('child_process')
+const { env, platform } = require('process')
 
 try {
   const command = `npx supabase gen types typescript --project-id ${env.SUPABASE_ID} --schema public > types/database.types.ts`
