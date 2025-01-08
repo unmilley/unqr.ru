@@ -9,7 +9,7 @@
     "build": "nuxt build",
     "preview": "nuxt preview",
     "postinstall": "node ./scripts/postinstall.cjs && pnpm generate:supabase && nuxt prepare",
-    "generate:supabase": "node -r dotenv/config ./scripts/supabase_gen.js"
+    "generate:supabase": "node ./scripts/supabase_gen.js"
   },
   "dependencies": {
     "@nuxtjs/color-mode": "^3.5.2",
