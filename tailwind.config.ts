@@ -2,7 +2,8 @@ import { defineTheme, type Variables } from '@unmilley/daisyui'
 import { masterClass } from '@unmilley/tw-master-class'
 import daisyui from 'daisyui'
 import type { Config } from 'tailwindcss'
-import { fontFamily } from 'tailwindcss/defaultTheme'
+import { fontFamily as twFontFamily } from 'tailwindcss/defaultTheme'
+import { fontFamily } from './src/fonts.app'
 
 const VARIABLES: Variables = {
   roundedBox: '1rem',
@@ -45,9 +46,11 @@ export default <Partial<Config>>{
   content: ['./components/**/*.vue', './layouts/**/*.vue', './pages/**/*.vue', './app.vue'],
   darkMode: ['class', 'data-theme'],
   theme: {
-    fontFamily: {
-      sans: ['Nunito', '-apple-system', ...fontFamily.sans],
-      logo: ['Tiny5', ...fontFamily.serif],
+    extend: {
+      fontFamily: {
+        sans: [fontFamily.base, '-apple-system', ...twFontFamily.sans],
+        logo: [fontFamily.logo, ...twFontFamily.serif],
+      },
     },
   },
   plugins: [masterClass, daisyui],

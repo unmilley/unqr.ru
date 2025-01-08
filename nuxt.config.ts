@@ -1,6 +1,6 @@
 const devServer = { https: true }
 import { config } from './src/config.app'
-import { head } from './src/head.app'
+import { fontLinks } from './src/fonts.app'
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
@@ -28,7 +28,11 @@ export default defineNuxtConfig({
   },
 
   app: {
-    head: { ...head },
+    head: {
+      htmlAttrs: { dir: 'ltr', lang: 'ru' },
+      titleTemplate: '%s %separator %siteName',
+      link: [...fontLinks],
+    },
   },
 
   runtimeConfig: { ...config },

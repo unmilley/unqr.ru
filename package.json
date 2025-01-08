@@ -16,7 +16,7 @@
     "@nuxtjs/seo": "2.0.2",
     "@nuxtjs/supabase": "1.4.5",
     "@vueuse/nuxt": "12.3.0",
-    "nuxt": "^3.15.0",
+    "nuxt": "^3.15.1",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
   },

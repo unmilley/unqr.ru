@@ -30,3 +30,9 @@
     -webkit-appearance: none;
   }
 }
+
+@layer utilities {
+  .tooltip:before {
+    overflow-x: hidden;
+  }
+}
