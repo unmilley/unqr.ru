@@ -8,7 +8,7 @@
     "dev:host": "nuxt dev --host",
     "build": "nuxt build",
     "preview": "nuxt preview",
-    "postinstall": "node ./scripts/postinstall.cjs && pnpm generate:supabase && nuxt prepare",
+    "postinstall": "node ./scripts/postinstall.cjs && nuxt prepare",
     "generate:supabase": "node ./scripts/supabase_gen.cjs"
   },
   "dependencies": {
