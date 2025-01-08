@@ -45,4 +45,13 @@ export default defineNuxtConfig({
     customCollections: [{ prefix: 'unqr', dir: './assets/icons' }],
   },
   devServer,
+
+  imports: {
+    dirs: ['./shared/utils', './shared/types'],
+  },
+  nitro: {
+    imports: {
+      dirs: ['./shared/utils', './shared/types'],
+    },
+  },
 })
