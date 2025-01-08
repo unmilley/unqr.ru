@@ -20,6 +20,9 @@ importers:
       '@vueuse/nuxt':
         specifier: 12.3.0
         version: 12.3.0(magicast@0.3.5)(nuxt@3.15.1(@parcel/watcher@2.5.0)(@types/node@22.10.5)(db0@0.2.1)(ioredis@5.4.2)(magicast@0.3.5)(rollup@4.30.1)(terser@5.37.0)(typescript@5.7.2)(vite@6.0.7(@types/node@22.10.5)(jiti@2.4.2)(terser@5.37.0)(yaml@2.7.0))(yaml@2.7.0))(rollup@4.30.1)(typescript@5.7.2)
+      dotenv:
+        specifier: ^16.4.7
+        version: 16.4.7
       nuxt:
         specifier: ^3.15.1
         version: 3.15.1(@parcel/watcher@2.5.0)(@types/node@22.10.5)(db0@0.2.1)(ioredis@5.4.2)(magicast@0.3.5)(rollup@4.30.1)(terser@5.37.0)(typescript@5.7.2)(vite@6.0.7(@types/node@22.10.5)(jiti@2.4.2)(terser@5.37.0)(yaml@2.7.0))(yaml@2.7.0)
@@ -51,9 +54,6 @@ importers:
       daisyui:
         specifier: ^4.12.23
         version: 4.12.23(postcss@8.4.49)
-      dotenv:
-        specifier: ^16.4.7
-        version: 16.4.7
       punycode:
         specifier: ^2.3.1
         version: 2.3.1
