@@ -18,7 +18,7 @@
               <tr v-for="(link, id) in data" :key="link.id" class="transition-colors hover:bg-base-300">
                 <td>{{ id + 1 }}</td>
                 <th>
-                  {{ link.title }}
+                  {{ link.description }}
                 </th>
                 <td>
                   <DashboardTableFullLink :url="link.full_link" />

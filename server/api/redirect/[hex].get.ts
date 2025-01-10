@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
 
     const client = await serverSupabaseClient<Database>(event)
 
-    const { data, error } = await client.from('links').select('views, full_link, title').eq('short_link', link)
+    const { data, error } = await client.from('links').select('views, full_link, description').eq('short_link', link)
     if (error) throw createError({ statusMessage: error.message })
     if (!data.length) throw createError({ statusMessage: 'no data in db' })
     const Data = data[0]
@@ -19,13 +19,13 @@ export default defineEventHandler(async (event) => {
 
     return {
       url: Data.full_link,
-      title: Data.title,
+      description: Data.description,
     }
   } catch (error) {
     console.log('error: ', error)
     return {
       url: useRuntimeConfig(event).public.baseUrl + '?error=L404',
-      title: '',
+      description: '',
     }
   }
 })
