@@ -3,8 +3,8 @@
     <ClientOnly>
       <div class="tooltip before:font-mono" :data-tip="copied ? 'В буфере!' : url" v-if="isSupported">
         <button @click="copy(url)" class="btn btn-ghost btn-xs gap-0 flex-nowrap text-nowrap font-mono">
-          <Icon :name="secure" />
-          <span>://</span>
+          <Icon :name="secure.icon" :class="secure.color" />
+          <span class="text-base-content/50">://</span>
 
           <span>{{ cropUrl }}</span>
         </button>
@@ -17,8 +17,8 @@
           :class="{ 'select-text': !isCrop }"
         >
           <template v-if="isCrop">
-            <Icon :name="secure" />
-            <span>://</span>
+            <Icon :name="secure.icon" :class="secure.color" />
+            <span class="text-base-content/50">://</span>
 
             <span>{{ cropUrl }}</span>
           </template>
@@ -38,7 +38,14 @@
 <script lang="ts" setup>
 const prop = defineProps<{ url: string }>()
 
-const secure = computed(() => (prop.url.startsWith('https') ? 'bx:lock-alt' : 'bx:lock-open-alt'))
+const secure = computed(() => {
+  const isHttps = prop.url.startsWith('https')
+
+  const icon = isHttps ? 'bx:lock-alt' : 'bx:lock-open-alt'
+  const color = isHttps ? 'text-success/50' : 'text-error/50'
+
+  return { icon, color }
+})
 
 const { isSupported, copy, copied } = useClipboard()
 
