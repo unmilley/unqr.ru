@@ -11,14 +11,12 @@
 
         {{ user.user_metadata.user_name }}
       </summary>
-      <ul class="menu menu-sm dropdown-content bg-base-100 mt-3 rounded-box z-[1] w-52 p-2 shadow">
+      <ul class="menu menu-sm dropdown-content bg-base-100 mt-3 rounded-box z-[1] p-2 shadow">
         <li>
-          <nuxt-link to="/dashboard" class="justify-between">
-            Dashboard
-            <span class="badge">New</span>
-          </nuxt-link>
+          <nuxt-link to="/dashboard" class="justify-between">Панель управления</nuxt-link>
         </li>
-        <li><a @click.prevent="handleSignOut">Logout</a></li>
+        <div class="divider my-0"></div>
+        <li><a @click.prevent="handleSignOut">Выйти</a></li>
       </ul>
     </UiDropdown>
   </div>
