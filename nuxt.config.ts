@@ -38,10 +38,8 @@ export default defineNuxtConfig({
   runtimeConfig: { ...config },
 
   supabase: {
-    redirectOptions: {
-      login: '/',
-      callback: '/confirm',
-    },
+    redirect: false,
+    types: './types/database.types.ts',
   },
   icon: {
     collections: ['bx'],

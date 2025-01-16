@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
   try {
     const user = await serverSupabaseUser(event)
     if (!user) throw createError('no user')
-    const client = await serverSupabaseClient<Database>(event)
+    const client = await serverSupabaseClient(event)
     const { data, error } = await client
       .from('links')
       .insert({

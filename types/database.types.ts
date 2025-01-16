@@ -38,7 +38,14 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_link_stats: {
+        Args: Record<PropertyKey, never>
+        Returns: {
+          total_users: number
+          total_views: number
+          total_links: number
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never
