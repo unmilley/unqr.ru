@@ -1,6 +1,6 @@
 {
-  "name": "short-link-qr",
-  "version": "1.0.1",
+  "name": "unqr",
+  "version": "1.1.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -13,28 +13,35 @@
   },
   "dependencies": {
     "@nuxtjs/color-mode": "^3.5.2",
-    "@nuxtjs/seo": "2.0.2",
+    "@nuxtjs/seo": "2.0.3",
     "@nuxtjs/supabase": "1.4.5",
-    "@vueuse/nuxt": "12.4.0",
     "@vueuse/core": "^12.4.0",
+    "@vueuse/nuxt": "12.4.0",
     "dotenv": "^16.4.7",
-    "nuxt": "^3.15.1",
+    "nuxt": "^3.15.2",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
     "@iconify-json/bx": "^1.2.2",
     "@nuxt/icon": "^1.10.3",
-    "@nuxtjs/tailwindcss": "^6.12.2",
+    "@nuxtjs/tailwindcss": "^6.13.1",
     "@unmilley/daisyui": "^1.0.7",
     "@unmilley/tw-master-class": "^1.0.0",
     "daisyui": "^4.12.23",
     "punycode": "^2.3.1",
-    "supabase": "^2.2.1",
+    "supabase": "^2.6.8",
     "tailwindcss": "^3.4.17"
   },
   "packageManager": "pnpm@9.15.2",
   "engines": {
     "node": ">=22.11.0"
-  }
+  },
+  "author": "Alexandr Lyadov <hello@milley.uno> (https://milley.uno/)",
+  "homepage": "https://github.com/unmilley/unqr.ru#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unmilley/unqr.ru.git"
+  },
+  "license": "MIT"
 }
