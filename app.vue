@@ -5,7 +5,10 @@
         <p>{{ message }} was loaded.</p>
       </template>
     </NuxtRouteAnnouncer>
-    <NuxtLoadingIndicator />
+    <NuxtLoadingIndicator
+      color="repeating-linear-gradient(to right,oklch(var(--n)) 0%, oklch(var(--p)) 100%)"
+      error="repeating-linear-gradient(to right,oklch(var(--n)) 0%, oklch(var(--er)) 100%)"
+    />
     <NuxtLayout>
       <NuxtPage
         :transition="{
