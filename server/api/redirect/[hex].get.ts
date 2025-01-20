@@ -8,10 +8,14 @@ export default defineEventHandler(async (event) => {
 
     const client = await serverSupabaseClient<Database>(event)
 
-    const { data, error } = await client.from('links').select('views, full_link, description').eq('short_link', link)
+    const { data, error } = await client
+      .from('links')
+      .select('views, full_link, description, is_frozen')
+      .eq('short_link', link)
     if (error) throw createError({ statusMessage: error.message })
     if (!data.length) throw createError({ statusMessage: 'no data in db' })
     const Data = data[0]
+    if (Data.is_frozen) throw createError({ statusMessage: 'Link is frozen' })
     await client
       .from('links')
       .update({ views: Data.views + 1 })
@@ -21,8 +25,8 @@ export default defineEventHandler(async (event) => {
       url: Data.full_link,
       description: Data.description,
     }
-  } catch (error) {
-    console.log('error: ', error)
+  } catch (error: any) {
+    console.warn('api/redirect/[hex].get', error.message)
     return {
       url: useRuntimeConfig(event).public.baseUrl + '?error=L404',
       description: '',
