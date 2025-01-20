@@ -5,29 +5,35 @@ export type Database = {
     Tables: {
       links: {
         Row: {
-          author_id: string
+          author_id: string | null
           created_at: string
-          description: string | null
+          description: string
           full_link: string
           id: number
+          is_frozen: boolean
+          is_private: boolean
           short_link: string
           views: number
         }
         Insert: {
-          author_id?: string
+          author_id?: string | null
           created_at?: string
-          description?: string | null
+          description?: string
           full_link?: string
           id?: number
+          is_frozen?: boolean
+          is_private?: boolean
           short_link?: string
           views?: number
         }
         Update: {
-          author_id?: string
+          author_id?: string | null
           created_at?: string
-          description?: string | null
+          description?: string
           full_link?: string
           id?: number
+          is_frozen?: boolean
+          is_private?: boolean
           short_link?: string
           views?: number
         }
