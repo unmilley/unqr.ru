@@ -18,6 +18,12 @@
               </button>
             </div>
           </div>
+          <div class="stat-desc mt-1.5 flex gap-1" v-if="lastShortUrl">
+            <div v-for="hex in lastShortUrl" :style="`background: #${hex}`" class="size-4 rounded-sm"></div>
+          </div>
+          <div class="stat-desc mt-1.5 flex gap-1" v-else>
+            <div v-for="_ in 14" class="size-4 rounded-sm skeleton"></div>
+          </div>
         </div>
         <div class="stat">
           <div class="stat-figure">
@@ -63,6 +69,7 @@
 </template>
 
 <script lang="ts" setup>
+const { data: lastShortUrl } = useFetch('/api/url/last')
 const { stats } = defineProps<{ stats: Stats }>()
 
 const { appVersion: version, gitRepo } = useRuntimeConfig().public
