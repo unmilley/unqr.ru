@@ -14,7 +14,7 @@ export default defineEventHandler(async (event): Promise<boolean> => {
     if (error) throw createError({ statusMessage: error.message })
     return true
   } catch (error: any) {
-    console.warn('api/dashboard/update-link.put', error.message)
+    console.warn('api/url/index.put', error.message)
     return false
   }
 })

@@ -28,7 +28,7 @@ export default defineEventHandler(async (event) => {
     if (error) throw createError({ statusMessage: error.message })
     return hex
   } catch (error: any) {
-    console.warn('api/dashboard/create-link.post', error.message)
+    console.warn('api/url/index.post', error.message)
     return ''
   }
 })

@@ -12,7 +12,7 @@ export default defineEventHandler(async (event): Promise<Link[]> => {
 
     return (data || []).sort((a, b) => a.id - b.id).map((link, index) => ({ ...link, index }))
   } catch (error: any) {
-    console.warn('api/dashboard/user-links.get', error.message)
+    console.warn('api/url/user.get', error.message)
     return []
   }
 })

@@ -13,7 +13,7 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 
     return true
   } catch (error: any) {
-    console.warn('api/dashboard/delete-link.delete', error.message)
+    console.warn('api/url/index.delete', error.message)
     return false
   }
 })
