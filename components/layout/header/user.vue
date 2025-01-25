@@ -15,7 +15,7 @@
         <li>
           <nuxt-link to="/dashboard" class="justify-between">Панель управления</nuxt-link>
         </li>
-        <div class="divider my-0"></div>
+        <ui-list-divider />
         <li><a @click.prevent="handleSignOut">Выйти</a></li>
       </ul>
     </UiDropdown>
