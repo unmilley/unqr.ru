@@ -8,7 +8,7 @@ const generateUniqueHex = async (event: H3Event, url: string): Promise<string> =
   return isExist ? await generateUniqueHex(event, url + ' ') : hex
 }
 
-export default defineEventHandler(async (event) => {
+export default defineEventHandler(async (event): Promise<Omit<Link, 'index'> | null> => {
   const body = await readBody<{ desc: string; url: string; isPrivate: boolean }>(event)
 
   try {
@@ -18,17 +18,20 @@ export default defineEventHandler(async (event) => {
     const hex = await generateUniqueHex(event, body.url)
 
     const client = await serverSupabaseClient(event)
-    const { error } = await client.from('links').insert({
-      full_link: body.url,
-      short_link: hex,
-      description: body.desc,
-      author_id: user.id,
-      is_private: body.isPrivate,
-    })
-    if (error) throw createError({ statusMessage: error.message })
-    return hex
+    const { data, error } = await client
+      .from('links')
+      .insert({
+        full_link: body.url,
+        short_link: hex,
+        description: body.desc,
+        author_id: user.id,
+        is_private: body.isPrivate,
+      })
+      .select('*')
+    if (error || !data) throw createError({ statusMessage: error.message })
+    return data[0]
   } catch (error: any) {
     console.warn('api/url/index.post', error.message)
-    return ''
+    return null
   }
 })

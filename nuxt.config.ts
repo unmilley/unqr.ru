@@ -49,7 +49,7 @@ export default defineNuxtConfig({
   devServer,
 
   imports: {
-    dirs: ['./shared/utils', './shared/types'],
+    dirs: ['./shared/utils', './shared/types', './stores'],
   },
   nitro: {
     imports: {

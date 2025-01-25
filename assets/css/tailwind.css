@@ -13,6 +13,15 @@
   html:has(.drawer-toggle:checked) {
     scrollbar-gutter: auto !important;
   }
+
+  textarea {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  textarea::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @layer components {

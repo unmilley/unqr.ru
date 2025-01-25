@@ -12,7 +12,7 @@
 
       <div v-else>
         <button
-          @click.passive="change"
+          @click.passive="changeCrop()"
           class="btn btn-ghost btn-xs gap-0 flex-nowrap text-nowrap font-mono"
           :class="{ 'select-text': !isCrop }"
         >
@@ -36,10 +36,13 @@
 </template>
 
 <script lang="ts" setup>
-const prop = defineProps<{ url: string }>()
+const props = defineProps<{ url: string }>()
+
+const [isCrop, changeCrop] = useToggle(true)
+const { isSupported, copy, copied } = useClipboard()
 
 const secure = computed(() => {
-  const isHttps = prop.url.startsWith('https')
+  const isHttps = props.url.startsWith('https')
 
   const icon = isHttps ? 'bx:lock-alt' : 'bx:lock-open-alt'
   const color = isHttps ? 'text-success/50' : 'text-error/50'
@@ -47,15 +50,12 @@ const secure = computed(() => {
   return { icon, color }
 })
 
-const { isSupported, copy, copied } = useClipboard()
-
 const cropUrl = computed(() => {
-  const url = prop.url.replace(/https?:\/\//i, '')
-  let cropped = url.slice(0, 18)
+  const url = props.url.replace(/https?:\/\//i, '')
+  if (url.length <= 25) return url
+
+  const cropped = url.slice(0, 18)
   const diff = url.length - 18
-  if (diff > 0) cropped += `...[+${diff}]`
-  return cropped
+  return `${cropped}...[+${diff}]`
 })
-const isCrop = ref(true)
-const change = () => (isCrop.value = !isCrop.value)
 </script>
