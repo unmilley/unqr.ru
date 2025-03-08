@@ -1,0 +1,1 @@
+export { useQR } from './useQR'
