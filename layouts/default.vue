@@ -1,9 +1,10 @@
 <template>
   <div>
     <LayoutHeaderNavbar />
-    <Auth v-if="!user" />
-    <main class="container mx-auto">
+    <main class="container mx-auto mb-16">
       <slot />
+      <LayoutNavbar />
+      <Auth v-if="!user" />
     </main>
   </div>
 </template>

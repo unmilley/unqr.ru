@@ -7,7 +7,7 @@
       </nuxt-link>
     </div>
     <div class="navbar-center"></div>
-    <div class="navbar-end">
+    <div class="navbar-end gap-2">
       <layout-header-theme />
       <layout-header-user />
     </div>
