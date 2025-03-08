@@ -4,7 +4,7 @@ const { execSync } = require('child_process')
 const { env, platform } = require('process')
 
 try {
-  const command = `npx supabase gen types typescript --project-id ${env.SUPABASE_ID} --schema public > types/database.types.ts`
+  const command = `pnpm dlx supabase gen types typescript --project-id ${env.SUPABASE_ID} --schema public > types/database.types.ts`
   console.log('command: ', command)
   if (platform === 'win32') {
     execSync(`powershell -Command ${command}`, {

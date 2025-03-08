@@ -1,75 +1,15 @@
-# Nuxt Minimal Starter
+# unQR
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Create QR codes and shorten links with unQR. Create, track and manage QR codes and links in one place.
 
-## Setup
+[![License][license-src]][license-href]
 
-Make sure to install dependencies:
+[license-src]: https://img.shields.io/github/license/unmilley/daisyui.svg?style=flat&colorA=161915&colorB=fbd24c
+[license-href]: https://github.com/unmilley/unqr.ru/blob/main/LICENSE
 
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+```shell
+# Before generating types for supabase you should perform authorization
+pnpm dlx supabase init
+pnpm dlx supabase login
+pnpm generate:supabase
 ```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
