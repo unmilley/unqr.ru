@@ -21,8 +21,11 @@ export const luminance = (hex: string): 'black' | 'white' => {
   hex = hex.replace(/^#/, '')
   hex = hex.length === 3 ? hex + hex : hex
 
-  const [r, g, b] = [0, 2, 4].map((startIdx) => parseInt(hex.substring(startIdx, startIdx + 2), 16))
+  const [r, g, b] = [0, 2, 4].map((startIdx) => {
+    const x = parseInt(hex.substring(startIdx, startIdx + 2), 16) / 255
+    return x <= 0.03928 ? x / 12.92 : Math.pow((x + 0.055) / 1.055, 2.4)
+  })
 
-  const lum = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255
-  return lum <= 0.5 ? 'black' : 'white'
+  const lum = 0.2126 * r + 0.7152 * g + 0.0722 * b
+  return lum >= 0.5 ? 'black' : 'white'
 }
