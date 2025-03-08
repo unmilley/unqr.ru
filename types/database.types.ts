@@ -39,6 +39,30 @@ export type Database = {
         }
         Relationships: []
       }
+      qr: {
+        Row: {
+          author_id: string
+          created_at: string
+          id: number
+          options: Json
+          user_name: string
+        }
+        Insert: {
+          author_id: string
+          created_at?: string
+          id?: number
+          options: Json
+          user_name?: string
+        }
+        Update: {
+          author_id?: string
+          created_at?: string
+          id?: number
+          options?: Json
+          user_name?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
